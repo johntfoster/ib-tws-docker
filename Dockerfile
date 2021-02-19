@@ -30,7 +30,7 @@ COPY --from=builder /root/install-tws.sh install-tws.sh
 RUN yes "" | ./install-tws.sh
 
 RUN mkdir .vnc
-RUN x11vnc -storepasswd 28456 .vnc/passwd
+RUN x11vnc -storepasswd $VNC_PASSWORD .vnc/passwd
 
 COPY --from=builder /opt/ibc /opt/ibc
 COPY --from=builder /root/run.sh run.sh

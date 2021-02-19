@@ -43,7 +43,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          buid-args:
+          build-args:
             VNC_PASSWORD=${{ secrets.VNC_PASSWORD }}
           push: true
           tags: |
