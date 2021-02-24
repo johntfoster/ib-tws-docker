@@ -13,5 +13,4 @@ socat TCP-LISTEN:$TWS_PORT,fork TCP:localhost:7496,forever &
 
 # Start this last and directly, so that if the gateway terminates for any reason, the container will stop as well.
 # Retry behavior can be implemented by re-running the container.
-/opt/ibc/scripts/ibcstart.sh $(ls ~/Jts) "--mode=$TRADING_MODE" "--user=$TWSUSERID" "--pw=$TWSPASSWORD"
-
+/opt/ibc/scripts/ibcstart.sh $(ls ~/Jts) "--mode=$TRADING_MODE" "--user=$TWSUSERID" "--pw=$TWSPASSWORD";
