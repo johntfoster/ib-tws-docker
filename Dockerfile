@@ -38,11 +38,10 @@ COPY --from=builder /root/run.sh run.sh
 COPY ibc_config.ini ibc/config.ini
 
 ENV DISPLAY :0
-ENV TRADING_MODE paper
 ENV TWS_PORT 7497
 ENV VNC_PORT 5900
 
 EXPOSE $TWS_PORT
 EXPOSE $VNC_PORT
 
-ENTRYPOINT ./run.sh
+ENTRYPOINT "./run.sh"
