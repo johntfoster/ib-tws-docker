@@ -8,7 +8,7 @@ rm -f /tmp/.X0-lock
 Xvfb :0 &
 sleep 1
 
-x11vnc -noxfixes -ncache 10 -rfbport $VNC_PORT -display :0 -usepw -forever &
+x11vnc -noxdamage -ncache 10 -rfbport $VNC_PORT -display :0 -usepw -forever &
 socat TCP-LISTEN:$TWS_PORT,fork TCP:localhost:7496,forever &
 
 # Start this last and directly, so that if the gateway terminates for any reason, the container will stop as well.
